@@ -2324,8 +2324,8 @@
                 { id: 3, name: "Anika", type: "Leather Laptop Bag", subcategory: "business", img: "anika" },
                 { id: 4, name: "Buresta", type: "Leather Backpack", subcategory: "business", img: "buresta" },
                 { id: 5, name: "Carlos", type: "Messenger A4 Bag", subcategory: "messenger", img: "carlos" },
-                { id: 6, name: "Clutch Bag Alexander", type: "Clutch Bag", subcategory: "business", img: "dirk" },
-                { id: 7, name: "Cycling Waist Bag Johnson", type: "Cycling Waist Bag", subcategory: "waist", img: "dirk" },
+                { id: 6, name: "Clutch Bag Alexander", type: "Clutch Bag", subcategory: "business", img: "clutch-bag-alexander" },
+                { id: 7, name: "Cycling Waist Bag Johnson", type: "Cycling Waist Bag", subcategory: "waist", img: "cycling-waist-bag-johnson" },
                 { id: 8, name: "Diederik", type: "Leather Bag", subcategory: "business", img: "diederik" },
                 { id: 9, name: "Dirk", type: "Leather Bag", subcategory: "business", img: "dirk" },
                 { id: 10, name: "Elmo", type: "Leather Bag", subcategory: "messenger", img: "elmo" },
@@ -2352,55 +2352,13 @@
                 { id: 29, name: "Pisa", type: "Backpack", subcategory: "business", img: "buresta" }
             ],
             wallets: [
-                // Men's Wallets (numbered series)
-                ...Array.from({length: 50}, (_, i) => ({
-                    id: i + 1,
-                    name: `${1348 + i} Men's Wallet`,
-                    type: i % 5 === 0 ? "Vintage Wallet" : i % 3 === 0 ? "Bifold Wallet" : "Classic Wallet",
-                    subcategory: "men",
-                    img: `wallet-${1348 + i}`
-                })),
-                // RFID Wallets
-                { id: 51, name: "RFID Secure Wallet Organizer", type: "12 Slot RFID Wallet", subcategory: "rfid", img: "rfid-1" },
-                { id: 52, name: "Gents RFID Card Wallet", type: "8 Slot RFID", subcategory: "rfid", img: "rfid-2" },
-                { id: 53, name: "RFID Secure Card Holder", type: "12 Slot Card Holder", subcategory: "rfid", img: "rfid-3" },
-                { id: 54, name: "RFID Blocking Wallet", type: "Secure Wallet", subcategory: "rfid", img: "rfid-4" },
-                { id: 55, name: "RFID Travel Wallet", type: "Travel Organizer", subcategory: "rfid", img: "rfid-5" },
+                // Men's Wallets
+                { id: 1, name: "1348 Men's Wallet", type: "Leather Wallet", subcategory: "men", img: "wallet-1348" },
+                { id: 2, name: "1355 Men's Wallet", type: "Leather Wallet", subcategory: "men", img: "wallet-1355" },
+                { id: 3, name: "1356 Men's Wallet", type: "Leather Wallet", subcategory: "men", img: "wallet-1356" },
+                { id: 4, name: "Rowan Wallet", type: "Men's Wallet", subcategory: "men", img: "rowan-wallet" },
                 // Women's Wallets
-                { id: 56, name: "Famke", type: "Women's Wallet", subcategory: "women", img: "famke" },
-                { id: 57, name: "Grietje", type: "Women's Wallet", subcategory: "women", img: "grietje" },
-                { id: 58, name: "Hendrika", type: "Women's Wallet", subcategory: "women", img: "hendrika" },
-                { id: 59, name: "Ingrid", type: "Women's Wallet", subcategory: "women", img: "ingrid" },
-                { id: 60, name: "Johanna", type: "Women's Wallet", subcategory: "women", img: "johanna" },
-                { id: 61, name: "Klara", type: "Women's Clutch Wallet", subcategory: "women", img: "klara" },
-                { id: 62, name: "Liesbeth", type: "Women's Wallet", subcategory: "women", img: "liesbeth" },
-                { id: 63, name: "Margriet", type: "Women's Wallet", subcategory: "women", img: "margriet" },
-                { id: 64, name: "Nelleke", type: "Women's Wallet", subcategory: "women", img: "nelleke" },
-                { id: 65, name: "Ottilie", type: "Women's Wallet", subcategory: "women", img: "ottilie" },
-                // Promotional Gifts
-                ...Array.from({length: 15}, (_, i) => ({
-                    id: 66 + i,
-                    name: `Promo Gift ${i + 1}`,
-                    type: "Promotional Wallet",
-                    subcategory: "promotional",
-                    img: `promo-${i + 1}`
-                })),
-                // Card Holders
-                ...Array.from({length: 15}, (_, i) => ({
-                    id: 81 + i,
-                    name: `Card Holder ${i + 1}`,
-                    type: "Credit Card Holder",
-                    subcategory: "cardholder",
-                    img: `cardholder-${i + 1}`
-                })),
-                // Key Chains
-                ...Array.from({length: 10}, (_, i) => ({
-                    id: 96 + i,
-                    name: `Keychain ${i + 1}`,
-                    type: "Leather Key Chain",
-                    subcategory: "keychain",
-                    img: `keychain-${i + 1}`
-                }))
+                { id: 5, name: "Skylar Purse", type: "Women's Purse", subcategory: "women", img: "skylar-purse" }
             ],
             belts: [
                 { id: 1, name: "GB011", type: "Oil Pull Up Leather Belt", subcategory: "belts", img: "gb011" },
