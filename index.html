@@ -1,0 +1,2739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adnan Lederwaren - Private Label Leather Goods Manufacturer. European quality, SA8000-certified production. MOQ from 50 pieces.">
+    <title>Adnan Lederwaren | Private Label Leather Goods Manufacturer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* ============================================
+           CSS CUSTOM PROPERTIES
+        ============================================ */
+        :root {
+            --krem: #F5F0E8;
+            --sand: #E8DDD0;
+            --skinn: #8B6347;
+            --skinn-dark: #6B4D37;
+            --mork: #1A1614;
+            --koppar: #B5784B;
+            --off-white: #FAF8F5;
+            --gra: #6B6560;
+            --gra-light: #A09A94;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-mono: 'DM Mono', monospace;
+
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 1px 2px rgba(26, 22, 20, 0.05);
+            --shadow-md: 0 4px 12px rgba(26, 22, 20, 0.08);
+            --shadow-lg: 0 8px 24px rgba(26, 22, 20, 0.12);
+        }
+
+        /* ============================================
+           RESET & BASE
+        ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--off-white);
+            color: var(--mork);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ============================================
+           NAVBAR
+        ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--off-white);
+            border-bottom: 1px solid var(--sand);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 120px;
+        }
+
+        .navbar-logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .navbar-nav a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--mork);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .navbar-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--skinn);
+            transition: var(--transition);
+        }
+
+        .navbar-nav a:hover::after,
+        .navbar-nav a.active::after {
+            width: 100%;
+        }
+
+        /* Products Dropdown */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            cursor: pointer;
+        }
+
+        .nav-dropdown-toggle i {
+            font-size: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--off-white);
+            border: 1px solid var(--sand);
+            box-shadow: var(--shadow-lg);
+            padding: 1.5rem;
+            min-width: 600px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .nav-dropdown-col h4 {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--skinn);
+            margin-bottom: 0.75rem;
+        }
+
+        .nav-dropdown-col ul {
+            list-style: none;
+        }
+
+        .nav-dropdown-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-dropdown-col a {
+            font-size: 0.85rem;
+            color: var(--gra);
+        }
+
+        .nav-dropdown-col a:hover {
+            color: var(--skinn);
+        }
+
+        .nav-dropdown-col a.external::after {
+            content: ' ↗';
+            font-size: 0.7rem;
+        }
+
+        /* CTA Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--skinn);
+            color: var(--off-white);
+        }
+
+        .btn-primary:hover {
+            background: var(--skinn-dark);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--koppar);
+            color: var(--koppar);
+        }
+
+        .btn-outline:hover {
+            background: var(--koppar);
+            color: var(--off-white);
+        }
+
+        .hero .btn-outline {
+            border-color: var(--sand);
+            color: var(--sand);
+        }
+
+        .hero .btn-outline:hover {
+            background: var(--sand);
+            color: var(--mork);
+        }
+
+        /* Mobile Menu Toggle */
+        .navbar-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 0.5rem;
+        }
+
+        .navbar-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--mork);
+            transition: var(--transition);
+        }
+
+        /* ============================================
+           MAIN CONTENT
+        ============================================ */
+        #app {
+            min-height: 100vh;
+            padding-top: 120px;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================
+           HOME PAGE - HERO
+        ============================================ */
+        .hero {
+            min-height: calc(100vh - 120px);
+            display: flex;
+            align-items: center;
+            background: var(--mork);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/leather-black-grain.jpg') center/cover;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            padding: 3rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-overline {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--koppar);
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--off-white);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--sand);
+            margin-bottom: 2rem;
+            max-width: 480px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--koppar);
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: var(--gra-light);
+        }
+
+        .hero-image {
+            position: relative;
+            height: 600px;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            background: rgba(26, 22, 20, 0.9);
+            padding: 1.5rem;
+            max-width: 280px;
+            border-left: 3px solid var(--koppar);
+        }
+
+        .hero-image-overlay p {
+            font-size: 0.9rem;
+            color: var(--sand);
+            font-style: italic;
+        }
+
+        /* ============================================
+           TRUST BAR
+        ============================================ */
+        .trust-bar {
+            background: var(--mork);
+            padding: 1.5rem 0;
+            position: relative;
+        }
+
+        .trust-bar::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/leather-black-grain.jpg') center/cover;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .trust-bar > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .trust-bar-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--sand);
+        }
+
+        .trust-item i {
+            font-size: 1.25rem;
+            color: var(--koppar);
+        }
+
+        .trust-item span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* ============================================
+           CATEGORIES GRID (HOME)
+        ============================================ */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-overline {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--skinn);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--mork);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--gra);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--sand);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .category-card:nth-child(1) img { object-position: center 40%; }
+        .category-card:nth-child(2) img { object-position: center 30%; }
+        .category-card:nth-child(3) img { object-position: center center; }
+        .category-card:nth-child(4) img { object-position: center center; }
+        .category-card:nth-child(5) img { object-position: center 20%; }
+        .category-card:nth-child(6) img { object-position: center 30%; }
+
+        .category-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .category-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,22,20,0.8) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            color: var(--off-white);
+        }
+
+        .category-card-count {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .category-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-card-link {
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--koppar);
+        }
+
+        .category-card-link i {
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-card-link i {
+            transform: translateX(4px);
+        }
+
+        /* ============================================
+           PROCESS SECTION
+        ============================================ */
+        .process {
+            background: var(--krem);
+            position: relative;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/leather-brown-wood.jpg') center/cover;
+            opacity: 0.04;
+            pointer-events: none;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--off-white);
+            position: relative;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: var(--sand);
+        }
+
+        .process-step:last-child::before {
+            display: none;
+        }
+
+        .process-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--skinn);
+            margin-bottom: 1rem;
+        }
+
+        .process-step h3 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step p {
+            font-size: 0.85rem;
+            color: var(--gra);
+        }
+
+        /* ============================================
+           CTA SECTION
+        ============================================ */
+        .cta-section {
+            background: var(--mork);
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/leather-black-pebbled.jpg') center/cover;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .cta-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--off-white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--gra-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn-primary {
+            background: var(--koppar);
+        }
+
+        .cta-section .btn-primary:hover {
+            background: var(--skinn);
+        }
+
+        /* ============================================
+           CATEGORY PAGE
+        ============================================ */
+        .category-hero {
+            background: var(--krem);
+            padding: 4rem 0 3rem;
+            text-align: center;
+        }
+
+        .category-hero h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .category-hero p {
+            color: var(--gra);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Filter Tabs */
+        .filter-section {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--sand);
+            position: sticky;
+            top: 120px;
+            background: var(--off-white);
+            z-index: 100;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-tab {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gra);
+            background: transparent;
+            border: 1px solid var(--sand);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-tab:hover {
+            border-color: var(--skinn);
+            color: var(--skinn);
+        }
+
+        .filter-tab.active {
+            background: var(--skinn);
+            border-color: var(--skinn);
+            color: var(--off-white);
+        }
+
+        .filter-tab .count {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 3rem 0;
+        }
+
+        .products-count {
+            font-size: 0.85rem;
+            color: var(--gra);
+            margin-bottom: 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--off-white);
+            border: 1px solid var(--sand);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .product-image {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--sand), var(--koppar));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--mork);
+            opacity: 0.6;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .product-info {
+            padding: 1.25rem;
+        }
+
+        .product-tag {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--skinn);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .product-info h3 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-link {
+            font-size: 0.85rem;
+            color: var(--skinn);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .product-link:hover {
+            color: var(--skinn-dark);
+        }
+
+        .product-link i {
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-link i {
+            transform: translateX(4px);
+        }
+
+        /* Load More */
+        .load-more {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        /* Category Description */
+        .category-description {
+            background: var(--krem);
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .category-description::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/leather-swatches.jpg') center/cover;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .category-description > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-description-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .category-description h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-description p {
+            color: var(--gra);
+            margin-bottom: 1rem;
+        }
+
+        /* ============================================
+           ABOUT PAGE
+        ============================================ */
+        .about-hero {
+            background: var(--krem);
+            padding: 5rem 0;
+        }
+
+        .about-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-hero h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero p {
+            color: var(--gra);
+            margin-bottom: 1rem;
+        }
+
+        .about-hero-image {
+            height: 500px;
+            background: var(--sand);
+        }
+
+        .about-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* About Values */
+        .about-values {
+            padding: 5rem 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .value-card {
+            padding: 2rem;
+            background: var(--krem);
+            text-align: center;
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--skinn);
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .value-card p {
+            font-size: 0.9rem;
+            color: var(--gra);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--mork);
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/leather-black-grain.jpg') center/cover;
+            opacity: 0.12;
+            pointer-events: none;
+        }
+
+        .testimonials > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials .section-overline {
+            color: var(--koppar);
+        }
+
+        .testimonials .section-title {
+            color: var(--off-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-left: 3px solid var(--koppar);
+        }
+
+        .testimonial-card p {
+            font-size: 0.95rem;
+            color: var(--sand);
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           CONTACT PAGE
+        ============================================ */
+        .contact-page {
+            padding: 4rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        .contact-info h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--gra);
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail i {
+            font-size: 1.25rem;
+            color: var(--skinn);
+            margin-top: 0.25rem;
+        }
+
+        .contact-detail h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-detail p {
+            font-size: 0.9rem;
+            color: var(--gra);
+            margin: 0;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--krem);
+            padding: 3rem;
+        }
+
+        .contact-form h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group label .required {
+            color: var(--koppar);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            border: 1px solid var(--sand);
+            background: var(--off-white);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--skinn);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: var(--gra);
+            margin-top: 0.5rem;
+        }
+
+        .form-submit {
+            margin-top: 1rem;
+        }
+
+        .form-submit .btn {
+            width: 100%;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .footer {
+            background: var(--mork);
+            color: var(--sand);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/leather-black-pebbled.jpg') center/cover;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .footer > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand img {
+            height: 40px;
+            margin-bottom: 1rem;
+            filter: brightness(1.2);
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        .footer h4 {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--koppar);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--koppar);
+        }
+
+        .footer-links a.external::after {
+            content: ' ↗';
+            font-size: 0.7rem;
+        }
+
+        .footer-contact p {
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(232, 221, 208, 0.3);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--koppar);
+            border-color: var(--koppar);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(232, 221, 208, 0.1);
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* ============================================
+           CRAFTSMANSHIP PAGE
+        ============================================ */
+        .craft-hero {
+            background: var(--mork);
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .craft-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/leather-black-grain.jpg') center/cover;
+            opacity: 0.3;
+        }
+
+        .craft-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .craft-hero .hero-title {
+            font-size: 4rem;
+        }
+
+        .craft-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .craft-step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .craft-step.reverse {
+            direction: rtl;
+        }
+
+        .craft-step.reverse > * {
+            direction: ltr;
+        }
+
+        .craft-step-image {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .craft-step-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .craft-step-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--koppar);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .craft-step-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .craft-step-content p {
+            color: var(--gra);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .craft-features {
+            list-style: none;
+        }
+
+        .craft-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .craft-features i {
+            color: var(--skinn);
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .material-card {
+            background: var(--off-white);
+            padding: 2rem;
+            border-left: 3px solid var(--koppar);
+        }
+
+        .material-card h3 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .material-card p {
+            font-size: 0.9rem;
+            color: var(--gra);
+            line-height: 1.6;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .cert-content .section-title {
+            text-align: left;
+        }
+
+        .cert-content > p {
+            color: var(--gra);
+            margin-bottom: 2rem;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .cert-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .cert-item i {
+            font-size: 1.5rem;
+            color: var(--koppar);
+            margin-top: 0.25rem;
+        }
+
+        .cert-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-item p {
+            font-size: 0.85rem;
+            color: var(--gra);
+        }
+
+        .cert-image {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .cert-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 1024px) {
+            .nav-dropdown-menu {
+                min-width: 500px;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-grid,
+            .about-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-image {
+                height: 400px;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-step::before {
+                display: none;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: none;
+            }
+
+            .navbar-toggle {
+                display: flex;
+            }
+
+            .navbar-nav.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 120px;
+                left: 0;
+                right: 0;
+                background: var(--off-white);
+                padding: 1.5rem;
+                border-bottom: 1px solid var(--sand);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-dropdown-menu {
+                position: static;
+                transform: none;
+                min-width: auto;
+                grid-template-columns: 1fr;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+            }
+
+            .nav-dropdown.active .nav-dropdown-menu {
+                display: grid;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 0.5rem;
+            }
+
+            .filter-tab {
+                white-space: nowrap;
+            }
+
+            .values-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .craft-hero .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .craft-step {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .craft-step.reverse {
+                direction: ltr;
+            }
+
+            .materials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         NAVBAR
+    ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="#/" class="navbar-brand">
+                    <img src="images/logo.png" alt="Adnan International" class="navbar-logo">
+                </a>
+
+                <ul class="navbar-nav" id="navbarNav">
+                    <li><a href="#/" data-nav="home">Home</a></li>
+                    <li class="nav-dropdown">
+                        <span class="nav-dropdown-toggle" data-nav="products">
+                            Products <i class="ph ph-caret-down"></i>
+                        </span>
+                        <div class="nav-dropdown-menu">
+                            <div class="nav-dropdown-col">
+                                <h4>Ladies Bags</h4>
+                                <ul>
+                                    <li><a href="#/products/ladies-bags">All Ladies Bags</a></li>
+                                    <li><a href="#/products/ladies-bags?filter=vegan">Vegan Bags</a></li>
+                                    <li><a href="#/products/ladies-bags?filter=backpack">Backpack Women</a></li>
+                                    <li><a href="#/products/ladies-bags?filter=bucket">Bucket Bag</a></li>
+                                    <li><a href="#/products/ladies-bags?filter=clutch">Clutch Bags</a></li>
+                                    <li><a href="#/products/ladies-bags?filter=crossbody">Cross Body Bag</a></li>
+                                    <li><a href="#/products/ladies-bags?filter=handbag">Hand Bag</a></li>
+                                    <li><a href="#/products/ladies-bags?filter=hobo">Hobo Bag</a></li>
+                                    <li><a href="#/products/ladies-bags?filter=tote">Tote Bag / Shopper</a></li>
+                                </ul>
+                            </div>
+                            <div class="nav-dropdown-col">
+                                <h4>Gents Bags</h4>
+                                <ul>
+                                    <li><a href="#/products/gents-bags">All Gents Bags</a></li>
+                                    <li><a href="#/products/gents-bags?filter=business">Business Bags</a></li>
+                                    <li><a href="#/products/gents-bags?filter=messenger">Messenger Bag</a></li>
+                                    <li><a href="#/products/gents-bags?filter=waist">Waist Bag Men</a></li>
+                                </ul>
+                                <h4 style="margin-top: 1.5rem;">Belts</h4>
+                                <ul>
+                                    <li><a href="#/products/belts">All Belts</a></li>
+                                </ul>
+                            </div>
+                            <div class="nav-dropdown-col">
+                                <h4>Wallets</h4>
+                                <ul>
+                                    <li><a href="#/products/wallets">All Wallets</a></li>
+                                    <li><a href="#/products/wallets?filter=men">Wallets Men</a></li>
+                                    <li><a href="#/products/wallets?filter=women">Wallets Women</a></li>
+                                    <li><a href="#/products/wallets?filter=rfid">RFID</a></li>
+                                    <li><a href="#/products/wallets?filter=promotional">Promotional Gift</a></li>
+                                    <li><a href="#/products/wallets?filter=cardholder">Credit Card Holder</a></li>
+                                    <li><a href="#/products/wallets?filter=keychain">Key Chain</a></li>
+                                </ul>
+                            </div>
+                            <div class="nav-dropdown-col">
+                                <h4>Jackets</h4>
+                                <ul>
+                                    <li><a href="#/products/jackets">All Jackets</a></li>
+                                    <li><a href="#/products/jackets?filter=gents">Gents Jacket</a></li>
+                                    <li><a href="#/products/jackets?filter=women">Women Jackets</a></li>
+                                </ul>
+                                <h4 style="margin-top: 1.5rem;">Gloves</h4>
+                                <ul>
+                                    <li><a href="https://theworkinggloves.com" target="_blank" class="external">Working Gloves</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#/about" data-nav="about">About</a></li>
+                    <li><a href="#/craftsmanship" data-nav="craftsmanship">Craftsmanship</a></li>
+                    <li><a href="#/contact" data-nav="contact">Contact</a></li>
+                    <li><a href="#/contact" class="btn btn-primary">Request a Quote</a></li>
+                </ul>
+
+                <button class="navbar-toggle" id="navbarToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         MAIN APP CONTAINER
+    ============================================ -->
+    <main id="app">
+        <!-- Pages rendered here by JavaScript -->
+    </main>
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Adnan Lederwaren">
+                    <p>Private label leather goods manufacturer. European quality standards with ethical production in India. Your partner from design to delivery.</p>
+                </div>
+
+                <div>
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#/products/ladies-bags">Ladies Bags</a></li>
+                        <li><a href="#/products/gents-bags">Gents Bags</a></li>
+                        <li><a href="#/products/wallets">Wallets</a></li>
+                        <li><a href="#/products/belts">Belts</a></li>
+                        <li><a href="#/products/jackets">Jackets</a></li>
+                        <li><a href="https://theworkinggloves.com" target="_blank" class="external">Gloves</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#/about">About Us</a></li>
+                        <li><a href="#/craftsmanship">Craftsmanship</a></li>
+                        <li><a href="#/about">Sustainability</a></li>
+                        <li><a href="#/contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Leif Erikssonstraat 1</p>
+                    <p>1363 LG Almere</p>
+                    <p>Netherlands</p>
+                    <p style="margin-top: 1rem;">+31 6538 04038</p>
+                    <p>info@adnanlederwaren.nl</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ph ph-x-logo"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                Built by SAGA
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+    ============================================ -->
+    <script>
+        // ============================================
+        // PRODUCT DATA
+        // ============================================
+        const PRODUCTS = {
+            ladiesBags: [
+                { id: 1, name: "Adam", type: "Laptop Bag", subcategory: "backpack", img: "adam" },
+                { id: 2, name: "Agusto", type: "Leather Backpack", subcategory: "backpack", img: "agusto" },
+                { id: 3, name: "Aleen", type: "Modern Women Bag", subcategory: "handbag", img: "aleen" },
+                { id: 4, name: "Aleid", type: "Leather Hand Bag", subcategory: "handbag", img: "aleid" },
+                { id: 5, name: "Alex", type: "Leather Messenger Bag", subcategory: "crossbody", img: "alex" },
+                { id: 6, name: "Alexandria", type: "Leather Tote Bag", subcategory: "tote", img: "alexandria" },
+                { id: 7, name: "Annelies", type: "Fringe Handbag", subcategory: "handbag", img: "annelies" },
+                { id: 8, name: "Arabella", type: "Women Bag", subcategory: "handbag", img: "arabella" },
+                { id: 9, name: "Audry", type: "Bucket Bag", subcategory: "bucket", img: "audry" },
+                { id: 10, name: "Bavaria", type: "Tote Bag", subcategory: "tote", img: "bavaria" },
+                { id: 11, name: "Belle", type: "Convertible Bag", subcategory: "tote", img: "belle" },
+                { id: 12, name: "Braided Shopper", type: "Shopper", subcategory: "tote", img: "braided" },
+                { id: 13, name: "Camille", type: "Clutch Bag", subcategory: "clutch", img: "camille" },
+                { id: 14, name: "Charlotte", type: "Cross Body Bag", subcategory: "crossbody", img: "charlotte" },
+                { id: 15, name: "Danique", type: "Hobo Bag", subcategory: "hobo", img: "danique" },
+                { id: 16, name: "Diana", type: "Vegan Tote", subcategory: "vegan", img: "diana" },
+                { id: 17, name: "Emma", type: "Bucket Bag", subcategory: "bucket", img: "emma" },
+                { id: 18, name: "Esmee", type: "Hand Bag", subcategory: "handbag", img: "esmee" },
+                { id: 19, name: "Eva", type: "Crossbody Bag", subcategory: "crossbody", img: "eva" },
+                { id: 20, name: "Fenna", type: "Tote Bag", subcategory: "tote", img: "fenna" },
+                { id: 21, name: "Fleur", type: "Clutch Bag", subcategory: "clutch", img: "fleur" },
+                { id: 22, name: "Greta", type: "Vegan Bag", subcategory: "vegan", img: "greta" },
+                { id: 23, name: "Hannah", type: "Backpack", subcategory: "backpack", img: "hannah" },
+                { id: 24, name: "Ilse", type: "Hobo Bag", subcategory: "hobo", img: "ilse" },
+                { id: 25, name: "Iris", type: "Hand Bag", subcategory: "handbag", img: "iris" },
+                { id: 26, name: "Julia", type: "Tote Bag", subcategory: "tote", img: "julia" },
+                { id: 27, name: "Katrien", type: "Crossbody", subcategory: "crossbody", img: "katrien" },
+                { id: 28, name: "Laura", type: "Bucket Bag", subcategory: "bucket", img: "laura" },
+                { id: 29, name: "Lotte", type: "Clutch", subcategory: "clutch", img: "lotte" },
+                { id: 30, name: "Madelief", type: "Vegan Tote", subcategory: "vegan", img: "madelief" },
+                { id: 31, name: "Marieke", type: "Hobo Bag", subcategory: "hobo", img: "marieke" },
+                { id: 32, name: "Nadia", type: "Hand Bag", subcategory: "handbag", img: "nadia" },
+                { id: 33, name: "Nina", type: "Backpack", subcategory: "backpack", img: "nina" },
+                { id: 34, name: "Olivia", type: "Tote Bag", subcategory: "tote", img: "olivia" },
+                { id: 35, name: "Petra", type: "Crossbody", subcategory: "crossbody", img: "petra" },
+                { id: 36, name: "Rosa", type: "Clutch Bag", subcategory: "clutch", img: "rosa" },
+                { id: 37, name: "Sophie", type: "Vegan Bag", subcategory: "vegan", img: "sophie" },
+                { id: 38, name: "Tessa", type: "Bucket Bag", subcategory: "bucket", img: "tessa" },
+                { id: 39, name: "Vera", type: "Hobo Bag", subcategory: "hobo", img: "vera" },
+                { id: 40, name: "Willemijn", type: "Tote Bag", subcategory: "tote", img: "willemijn" },
+                { id: 41, name: "Yara", type: "Hand Bag", subcategory: "handbag", img: "yara" },
+                { id: 42, name: "Zara", type: "Crossbody Bag", subcategory: "crossbody", img: "zara" }
+            ],
+            gentsBags: [
+                { id: 1, name: "Adam", type: "Laptop Bag", subcategory: "business", img: "adam" },
+                { id: 2, name: "Alex", type: "Messenger Bag", subcategory: "messenger", img: "alex" },
+                { id: 3, name: "Anika", type: "Leather Laptop Bag", subcategory: "business", img: "anika" },
+                { id: 4, name: "Buresta", type: "Leather Backpack", subcategory: "business", img: "buresta" },
+                { id: 5, name: "Carlos", type: "Messenger A4", subcategory: "messenger", img: "carlos" },
+                { id: 6, name: "Alexander", type: "Clutch Bag", subcategory: "business", img: "alexander" },
+                { id: 7, name: "Johnson", type: "Cycling Waist Bag", subcategory: "waist", img: "johnson" },
+                { id: 8, name: "Diederik", type: "Leather Bag", subcategory: "business", img: "diederik" },
+                { id: 9, name: "Dirk", type: "Leather Bag", subcategory: "business", img: "dirk" },
+                { id: 10, name: "Elmo", type: "Leather Bag", subcategory: "messenger", img: "elmo" },
+                { id: 11, name: "Emil", type: "Leather Bag", subcategory: "business", img: "emil" },
+                { id: 12, name: "Eric", type: "Leather Bag", subcategory: "messenger", img: "eric" },
+                { id: 13, name: "Frederik", type: "Business Bag", subcategory: "business", img: "frederik" },
+                { id: 14, name: "Gerard", type: "Messenger Bag", subcategory: "messenger", img: "gerard" },
+                { id: 15, name: "Hendrik", type: "Laptop Bag", subcategory: "business", img: "hendrik" },
+                { id: 16, name: "Jan", type: "Waist Bag", subcategory: "waist", img: "jan" },
+                { id: 17, name: "Karel", type: "Business Bag", subcategory: "business", img: "karel" },
+                { id: 18, name: "Lars", type: "Messenger Bag", subcategory: "messenger", img: "lars" },
+                { id: 19, name: "Maarten", type: "Laptop Bag", subcategory: "business", img: "maarten" },
+                { id: 20, name: "Niels", type: "Waist Bag", subcategory: "waist", img: "niels" },
+                { id: 21, name: "Oscar", type: "Messenger Bag", subcategory: "messenger", img: "oscar" },
+                { id: 22, name: "Pieter", type: "Business Bag", subcategory: "business", img: "pieter" },
+                { id: 23, name: "Ruben", type: "Laptop Bag", subcategory: "business", img: "ruben" },
+                { id: 24, name: "Stefan", type: "Messenger Bag", subcategory: "messenger", img: "stefan" },
+                { id: 25, name: "Thomas", type: "Waist Bag", subcategory: "waist", img: "thomas" },
+                { id: 26, name: "Victor", type: "Business Bag", subcategory: "business", img: "victor" },
+                { id: 27, name: "Willem", type: "Messenger Bag", subcategory: "messenger", img: "willem" },
+                { id: 28, name: "Xavier", type: "Laptop Bag", subcategory: "business", img: "xavier" },
+                { id: 29, name: "Yorick", type: "Waist Bag", subcategory: "waist", img: "yorick" }
+            ],
+            wallets: [
+                // Men's Wallets (numbered series)
+                ...Array.from({length: 50}, (_, i) => ({
+                    id: i + 1,
+                    name: `${1348 + i} Men's Wallet`,
+                    type: i % 5 === 0 ? "Vintage Wallet" : i % 3 === 0 ? "Bifold Wallet" : "Classic Wallet",
+                    subcategory: "men",
+                    img: `wallet-${1348 + i}`
+                })),
+                // RFID Wallets
+                { id: 51, name: "RFID Secure Wallet Organizer", type: "12 Slot RFID Wallet", subcategory: "rfid", img: "rfid-1" },
+                { id: 52, name: "Gents RFID Card Wallet", type: "8 Slot RFID", subcategory: "rfid", img: "rfid-2" },
+                { id: 53, name: "RFID Secure Card Holder", type: "12 Slot Card Holder", subcategory: "rfid", img: "rfid-3" },
+                { id: 54, name: "RFID Blocking Wallet", type: "Secure Wallet", subcategory: "rfid", img: "rfid-4" },
+                { id: 55, name: "RFID Travel Wallet", type: "Travel Organizer", subcategory: "rfid", img: "rfid-5" },
+                // Women's Wallets
+                { id: 56, name: "Famke", type: "Women's Wallet", subcategory: "women", img: "famke" },
+                { id: 57, name: "Grietje", type: "Women's Wallet", subcategory: "women", img: "grietje" },
+                { id: 58, name: "Hendrika", type: "Women's Wallet", subcategory: "women", img: "hendrika" },
+                { id: 59, name: "Ingrid", type: "Women's Wallet", subcategory: "women", img: "ingrid" },
+                { id: 60, name: "Johanna", type: "Women's Wallet", subcategory: "women", img: "johanna" },
+                { id: 61, name: "Klara", type: "Women's Clutch Wallet", subcategory: "women", img: "klara" },
+                { id: 62, name: "Liesbeth", type: "Women's Wallet", subcategory: "women", img: "liesbeth" },
+                { id: 63, name: "Margriet", type: "Women's Wallet", subcategory: "women", img: "margriet" },
+                { id: 64, name: "Nelleke", type: "Women's Wallet", subcategory: "women", img: "nelleke" },
+                { id: 65, name: "Ottilie", type: "Women's Wallet", subcategory: "women", img: "ottilie" },
+                // Promotional Gifts
+                ...Array.from({length: 15}, (_, i) => ({
+                    id: 66 + i,
+                    name: `Promo Gift ${i + 1}`,
+                    type: "Promotional Wallet",
+                    subcategory: "promotional",
+                    img: `promo-${i + 1}`
+                })),
+                // Card Holders
+                ...Array.from({length: 15}, (_, i) => ({
+                    id: 81 + i,
+                    name: `Card Holder ${i + 1}`,
+                    type: "Credit Card Holder",
+                    subcategory: "cardholder",
+                    img: `cardholder-${i + 1}`
+                })),
+                // Key Chains
+                ...Array.from({length: 10}, (_, i) => ({
+                    id: 96 + i,
+                    name: `Keychain ${i + 1}`,
+                    type: "Leather Key Chain",
+                    subcategory: "keychain",
+                    img: `keychain-${i + 1}`
+                }))
+            ],
+            belts: [
+                { id: 1, name: "GB011", type: "Oil Pull Up Leather Belt", subcategory: "belts", img: "gb011" },
+                { id: 2, name: "GB015", type: "Grain Leather Belt", subcategory: "belts", img: "gb015" },
+                { id: 3, name: "GB053", type: "Quality Split Leather Belt", subcategory: "belts", img: "gb053" },
+                { id: 4, name: "GB072", type: "Leather Belt", subcategory: "belts", img: "gb072" },
+                { id: 5, name: "GB074", type: "Leather Belt", subcategory: "belts", img: "gb074" },
+                { id: 6, name: "GB081", type: "Leather Belt", subcategory: "belts", img: "gb081" }
+            ],
+            jackets: [
+                { id: 1, name: "Jackson", type: "Gents Leather Jacket", subcategory: "gents", img: "jackson" },
+                { id: 2, name: "Arlan", type: "Snake Print Leather Jacket", subcategory: "gents", img: "arlan" },
+                { id: 3, name: "Jackline", type: "Vintage Women's Jacket", subcategory: "women", img: "jackline" }
+            ]
+        };
+
+        // Category configurations
+        const CATEGORIES = {
+            'ladies-bags': {
+                title: 'Ladies Bags',
+                description: 'Premium leather bags crafted for the modern woman. From elegant totes to versatile crossbodies.',
+                products: PRODUCTS.ladiesBags,
+                filters: [
+                    { key: 'all', label: 'All' },
+                    { key: 'vegan', label: 'Vegan Bags' },
+                    { key: 'backpack', label: 'Backpack Women' },
+                    { key: 'bucket', label: 'Bucket Bag' },
+                    { key: 'clutch', label: 'Clutch Bags' },
+                    { key: 'crossbody', label: 'Cross Body Bag' },
+                    { key: 'handbag', label: 'Hand Bag' },
+                    { key: 'hobo', label: 'Hobo Bag' },
+                    { key: 'tote', label: 'Tote Bag / Shopper' }
+                ]
+            },
+            'gents-bags': {
+                title: 'Gents Bags',
+                description: 'Professional leather bags designed for the modern businessman. Business bags, messengers, and more.',
+                products: PRODUCTS.gentsBags,
+                filters: [
+                    { key: 'all', label: 'All' },
+                    { key: 'business', label: 'Business Bags' },
+                    { key: 'messenger', label: 'Messenger Bag' },
+                    { key: 'waist', label: 'Waist Bag Men' }
+                ]
+            },
+            'wallets': {
+                title: 'Wallets',
+                description: 'From classic bifolds to RFID-protected cardholders. Premium leather small goods for every need.',
+                products: PRODUCTS.wallets,
+                filters: [
+                    { key: 'all', label: 'All' },
+                    { key: 'men', label: 'Wallets Men' },
+                    { key: 'women', label: 'Wallets Women' },
+                    { key: 'rfid', label: 'RFID' },
+                    { key: 'promotional', label: 'Promotional Gift' },
+                    { key: 'cardholder', label: 'Credit Card Holder' },
+                    { key: 'keychain', label: 'Key Chain' }
+                ]
+            },
+            'belts': {
+                title: 'Belts',
+                description: 'Handcrafted leather belts in oil pull-up, grain, and split leather. Custom buckles available.',
+                products: PRODUCTS.belts,
+                filters: [
+                    { key: 'all', label: 'All Belts' }
+                ]
+            },
+            'jackets': {
+                title: 'Leather Jackets',
+                description: 'Premium leather jackets for men and women. Full-grain, nappa, and vegetable-tanned options.',
+                products: PRODUCTS.jackets,
+                filters: [
+                    { key: 'all', label: 'All' },
+                    { key: 'gents', label: 'Gents Jacket' },
+                    { key: 'women', label: 'Women Jackets' }
+                ]
+            }
+        };
+
+        // ============================================
+        // PAGE TEMPLATES
+        // ============================================
+        const pages = {
+            home: () => `
+                <section class="hero">
+                    <div class="container">
+                        <div class="hero-grid">
+                            <div class="hero-content">
+                                <span class="hero-overline">Private Label Manufacturing</span>
+                                <h1 class="hero-title">European Quality,<br>Ethical Production</h1>
+                                <p class="hero-subtitle">SA8000-certified leather goods manufacturing. From design to delivery, we're your trusted partner for premium private label products.</p>
+                                <div class="hero-cta">
+                                    <a href="#/contact" class="btn btn-primary">Request a Quote</a>
+                                    <a href="#/products/ladies-bags" class="btn btn-outline">View Products</a>
+                                </div>
+                                <div class="hero-stats">
+                                    <div class="hero-stat">
+                                        <div class="hero-stat-value">185+</div>
+                                        <div class="hero-stat-label">Products</div>
+                                    </div>
+                                    <div class="hero-stat">
+                                        <div class="hero-stat-value">20+</div>
+                                        <div class="hero-stat-label">Years Experience</div>
+                                    </div>
+                                    <div class="hero-stat">
+                                        <div class="hero-stat-value">50</div>
+                                        <div class="hero-stat-label">MOQ Pieces</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-image">
+                                <img src="images/motorcycle-lifestyle.jpg" alt="Premium leather craftsmanship">
+                                <div class="hero-image-overlay">
+                                    <p>"The quality of the leather is excellent and the choices are many."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trust-bar">
+                    <div class="container">
+                        <div class="trust-bar-inner">
+                            <div class="trust-item">
+                                <i class="ph ph-certificate"></i>
+                                <span>SA8000 Certified</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="ph ph-leaf"></i>
+                                <span>LWG Certified Leather</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="ph ph-flag"></i>
+                                <span>Dutch Sales Office</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="ph ph-package"></i>
+                                <span>MOQ from 50 pcs</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-overline">Product Categories</span>
+                            <h2 class="section-title">Our Collections</h2>
+                            <p class="section-subtitle">Premium leather goods manufactured to your specifications</p>
+                        </div>
+                        <div class="categories-grid">
+                            <div class="category-card" onclick="navigateTo('/products/ladies-bags')">
+                                <img src="images/ladies-bag.jpg" alt="Ladies Bags">
+                                <div class="category-card-overlay">
+                                    <span class="category-card-count">42 Products</span>
+                                    <h3>Ladies Bags</h3>
+                                    <span class="category-card-link">Explore Collection <i class="ph ph-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="category-card" onclick="navigateTo('/products/gents-bags')">
+                                <img src="images/gents-briefcase.jpg" alt="Gents Bags">
+                                <div class="category-card-overlay">
+                                    <span class="category-card-count">29 Products</span>
+                                    <h3>Gents Bags</h3>
+                                    <span class="category-card-link">Explore Collection <i class="ph ph-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="category-card" onclick="navigateTo('/products/wallets')">
+                                <img src="images/wallets-flatlay.jpg" alt="Wallets">
+                                <div class="category-card-overlay">
+                                    <span class="category-card-count">105 Products</span>
+                                    <h3>Wallets</h3>
+                                    <span class="category-card-link">Explore Collection <i class="ph ph-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="category-card" onclick="navigateTo('/products/belts')">
+                                <img src="images/black-belt.jpg" alt="Belts">
+                                <div class="category-card-overlay">
+                                    <span class="category-card-count">6 Products</span>
+                                    <h3>Belts</h3>
+                                    <span class="category-card-link">Explore Collection <i class="ph ph-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="category-card" onclick="navigateTo('/products/jackets')">
+                                <img src="images/leather-jacket.jpg" alt="Leather Jackets">
+                                <div class="category-card-overlay">
+                                    <span class="category-card-count">3 Products</span>
+                                    <h3>Leather Jackets</h3>
+                                    <span class="category-card-link">Explore Collection <i class="ph ph-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="category-card" onclick="navigateTo('/products/jackets')">
+                                <img src="images/corporate-gifts.jpg" alt="Corporate Gifts">
+                                <div class="category-card-overlay">
+                                    <span class="category-card-count">B2B Gifting</span>
+                                    <h3>Corporate Gifts</h3>
+                                    <span class="category-card-link">Learn More <i class="ph ph-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section process">
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-overline">How We Work</span>
+                            <h2 class="section-title">Our Process</h2>
+                            <p class="section-subtitle">From concept to delivery in four simple steps</p>
+                        </div>
+                        <div class="process-grid">
+                            <div class="process-step">
+                                <div class="process-number">01</div>
+                                <h3>Dutch Consultation</h3>
+                                <p>Meet with our team in Almere to discuss your requirements, materials, and design vision.</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="process-number">02</div>
+                                <h3>Prototyping</h3>
+                                <p>Our skilled craftsmen create samples for your approval before production begins.</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="process-number">03</div>
+                                <h3>SA8000 Production</h3>
+                                <p>Ethical manufacturing in our certified facility using LWG-certified leather.</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="process-number">04</div>
+                                <h3>Door-to-Door Delivery</h3>
+                                <p>Quality-checked products delivered directly to your warehouse or store.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cta-section">
+                    <div class="container">
+                        <h2>Ready to Start Your Project?</h2>
+                        <p>Contact us today for a free consultation and quote. MOQ from just 50 pieces.</p>
+                        <a href="#/contact" class="btn btn-primary">Request a Quote <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </section>
+            `,
+
+            category: (categoryKey, filter = 'all') => {
+                const category = CATEGORIES[categoryKey];
+                if (!category) return pages.notFound();
+
+                let products = category.products;
+                if (filter && filter !== 'all') {
+                    products = products.filter(p => p.subcategory === filter);
+                }
+
+                const filterCounts = {};
+                category.filters.forEach(f => {
+                    if (f.key === 'all') {
+                        filterCounts[f.key] = category.products.length;
+                    } else {
+                        filterCounts[f.key] = category.products.filter(p => p.subcategory === f.key).length;
+                    }
+                });
+
+                const displayLimit = 12;
+                const hasMore = products.length > displayLimit;
+                const displayProducts = products.slice(0, displayLimit);
+
+                return `
+                    <section class="category-hero">
+                        <div class="container">
+                            <h1>${category.title}</h1>
+                            <p>${category.description}</p>
+                        </div>
+                    </section>
+
+                    <section class="filter-section">
+                        <div class="container">
+                            <div class="filter-tabs">
+                                ${category.filters.map(f => `
+                                    <button class="filter-tab ${filter === f.key ? 'active' : ''}"
+                                            onclick="filterCategory('${categoryKey}', '${f.key}')">
+                                        ${f.label} <span class="count">(${filterCounts[f.key]})</span>
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="products-section">
+                        <div class="container">
+                            <p class="products-count">Showing ${Math.min(displayLimit, products.length)} of ${products.length} products</p>
+                            <div class="products-grid" id="productsGrid">
+                                ${displayProducts.map(product => renderProductCard(product)).join('')}
+                            </div>
+                            ${hasMore ? `
+                                <div class="load-more">
+                                    <button class="btn btn-outline" onclick="loadMoreProducts('${categoryKey}', '${filter}')">
+                                        Load More Products
+                                    </button>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </section>
+
+                    <section class="category-description">
+                        <div class="container">
+                            <div class="category-description-inner">
+                                <h2>About Our ${category.title}</h2>
+                                <p>All our ${category.title.toLowerCase()} are crafted from premium LWG-certified leather in our SA8000-certified facility. We offer full customization including materials, colors, hardware, and branding.</p>
+                                <p>With a minimum order quantity of just 50 pieces, we're the perfect partner for emerging brands and established retailers alike.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="cta-section">
+                        <div class="container">
+                            <h2>Interested in ${category.title}?</h2>
+                            <p>Get a custom quote for your private label ${category.title.toLowerCase()}.</p>
+                            <a href="#/contact" class="btn btn-primary">Request a Quote <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                    </section>
+                `;
+            },
+
+            about: () => `
+                <section class="about-hero">
+                    <div class="container">
+                        <div class="about-hero-grid">
+                            <div>
+                                <h1>Family Business,<br>Global Reach</h1>
+                                <p>Adnan International Lederwaren is a Dutch-owned private label leather goods manufacturer with over 20 years of experience crafting premium products for European brands.</p>
+                                <p>With our sales office in Almere, Netherlands, and SA8000-certified production facility in India, we bridge the gap between European quality standards and ethical manufacturing.</p>
+                                <p>Our own tannery ensures complete control over material quality, while our skilled craftsmen bring your designs to life with precision and care.</p>
+                            </div>
+                            <div class="about-hero-image">
+                                <img src="images/leather-factory-worker.jpg" alt="Leather craftsmanship">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="about-values section">
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-overline">Our Values</span>
+                            <h2 class="section-title">Why Choose Us</h2>
+                        </div>
+                        <div class="values-grid">
+                            <div class="value-card">
+                                <i class="ph ph-certificate"></i>
+                                <h3>SA8000 Certified</h3>
+                                <p>Our factory meets the highest standards for ethical working conditions and fair labor practices.</p>
+                            </div>
+                            <div class="value-card">
+                                <i class="ph ph-leaf"></i>
+                                <h3>LWG Certified Leather</h3>
+                                <p>We use only Leather Working Group certified materials for sustainable production.</p>
+                            </div>
+                            <div class="value-card">
+                                <i class="ph ph-flag"></i>
+                                <h3>Dutch Sales Office</h3>
+                                <p>Meet face-to-face in Almere for consultations, sample reviews, and project discussions.</p>
+                            </div>
+                            <div class="value-card">
+                                <i class="ph ph-factory"></i>
+                                <h3>Own Tannery</h3>
+                                <p>Complete control over leather quality from raw material to finished product.</p>
+                            </div>
+                            <div class="value-card">
+                                <i class="ph ph-package"></i>
+                                <h3>Low MOQ</h3>
+                                <p>Start with just 50 pieces per style — perfect for emerging brands and test runs.</p>
+                            </div>
+                            <div class="value-card">
+                                <i class="ph ph-clock"></i>
+                                <h3>20+ Years Experience</h3>
+                                <p>Two decades of expertise in private label leather goods manufacturing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="testimonials">
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-overline">Client Testimonials</span>
+                            <h2 class="section-title">What Our Partners Say</h2>
+                        </div>
+                        <div class="testimonials-grid">
+                            <div class="testimonial-card">
+                                <p>"I am very happy with the performance of Adnan International and their prototyping / sampling team. They are competent, talented and versatile..."</p>
+                            </div>
+                            <div class="testimonial-card">
+                                <p>"The quality of the leather is excellent and the choices are many. We wholeheartedly endorse Adnan International as one of the best professional leather goods manufacturers."</p>
+                            </div>
+                            <div class="testimonial-card">
+                                <p>"With their office here in the Netherlands, Adnan International makes the process much easier and more effective."</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section process">
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-overline">How We Work</span>
+                            <h2 class="section-title">Our Process</h2>
+                        </div>
+                        <div class="process-grid">
+                            <div class="process-step">
+                                <div class="process-number">01</div>
+                                <h3>Dutch Consultation</h3>
+                                <p>Meet with our team in Almere to discuss your requirements.</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="process-number">02</div>
+                                <h3>Prototyping</h3>
+                                <p>Sample creation for your approval before production.</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="process-number">03</div>
+                                <h3>SA8000 Production</h3>
+                                <p>Ethical manufacturing with certified materials.</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="process-number">04</div>
+                                <h3>Door-to-Door Delivery</h3>
+                                <p>Quality-checked products delivered to you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cta-section">
+                    <div class="container">
+                        <h2>Ready to Partner With Us?</h2>
+                        <p>Contact us today for a free consultation and quote.</p>
+                        <a href="#/contact" class="btn btn-primary">Request a Quote <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </section>
+            `,
+
+            craftsmanship: () => `
+                <section class="craft-hero">
+                    <div class="container">
+                        <div class="craft-hero-grid">
+                            <div class="craft-hero-content">
+                                <span class="hero-overline">The Art of Leather</span>
+                                <h1 class="hero-title">Craftsmanship</h1>
+                                <p class="hero-subtitle">Every piece we create is a testament to generations of leather-working expertise. From selecting the finest hides to the final stitch, our artisans pour their skill and passion into every product.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section craft-process">
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-overline">Our Process</span>
+                            <h2 class="section-title">From Hide to Handbag</h2>
+                            <p class="section-subtitle">A journey of precision, patience, and passion</p>
+                        </div>
+                        <div class="craft-steps">
+                            <div class="craft-step">
+                                <div class="craft-step-image">
+                                    <img src="images/leather-swatches.jpg" alt="Leather Selection">
+                                </div>
+                                <div class="craft-step-content">
+                                    <span class="craft-step-number">01</span>
+                                    <h3>Leather Selection</h3>
+                                    <p>We source only the finest LWG-certified leather from our own tannery. Each hide is carefully inspected for grain quality, thickness, and natural characteristics. We work with full-grain, top-grain, and vegetable-tanned leathers depending on your requirements.</p>
+                                    <ul class="craft-features">
+                                        <li><i class="ph ph-check-circle"></i> LWG Gold Certified</li>
+                                        <li><i class="ph ph-check-circle"></i> Own Tannery Control</li>
+                                        <li><i class="ph ph-check-circle"></i> Natural & Chrome-free Options</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="craft-step reverse">
+                                <div class="craft-step-image">
+                                    <img src="images/leather-crafting.jpg" alt="Pattern Cutting">
+                                </div>
+                                <div class="craft-step-content">
+                                    <span class="craft-step-number">02</span>
+                                    <h3>Pattern & Cutting</h3>
+                                    <p>Master craftsmen create precise patterns for each design. Cutting is done by hand or with precision machinery, ensuring minimal waste and optimal use of each hide's best sections. Every piece is marked and organized for assembly.</p>
+                                    <ul class="craft-features">
+                                        <li><i class="ph ph-check-circle"></i> Precision Pattern Making</li>
+                                        <li><i class="ph ph-check-circle"></i> Minimal Waste Cutting</li>
+                                        <li><i class="ph ph-check-circle"></i> Quality-Checked Pieces</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="craft-step">
+                                <div class="craft-step-image">
+                                    <img src="images/leather-factory-worker.jpg" alt="Assembly">
+                                </div>
+                                <div class="craft-step-content">
+                                    <span class="craft-step-number">03</span>
+                                    <h3>Assembly & Stitching</h3>
+                                    <p>Our skilled artisans assemble each product with meticulous attention to detail. Edges are burnished, seams are reinforced, and every stitch is placed with precision. We use high-quality threads and hardware that stand the test of time.</p>
+                                    <ul class="craft-features">
+                                        <li><i class="ph ph-check-circle"></i> Hand-Finished Edges</li>
+                                        <li><i class="ph ph-check-circle"></i> Reinforced Stress Points</li>
+                                        <li><i class="ph ph-check-circle"></i> Premium Hardware</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="craft-step reverse">
+                                <div class="craft-step-image">
+                                    <img src="images/corporate-gifts.jpg" alt="Quality Control">
+                                </div>
+                                <div class="craft-step-content">
+                                    <span class="craft-step-number">04</span>
+                                    <h3>Quality Control & Finishing</h3>
+                                    <p>Every product undergoes rigorous quality inspection before leaving our facility. We check stitching, hardware function, leather condition, and overall aesthetics. Products are then carefully packed for safe delivery.</p>
+                                    <ul class="craft-features">
+                                        <li><i class="ph ph-check-circle"></i> Multi-Point Inspection</li>
+                                        <li><i class="ph ph-check-circle"></i> Function Testing</li>
+                                        <li><i class="ph ph-check-circle"></i> Protective Packaging</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section craft-materials" style="background: var(--krem);">
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-overline">Premium Materials</span>
+                            <h2 class="section-title">Leather Types We Work With</h2>
+                        </div>
+                        <div class="materials-grid">
+                            <div class="material-card">
+                                <h3>Full-Grain Leather</h3>
+                                <p>The highest quality leather with the complete grain surface intact. Develops a beautiful patina over time. Used for premium bags and accessories.</p>
+                            </div>
+                            <div class="material-card">
+                                <h3>Top-Grain Leather</h3>
+                                <p>Sanded and refinished for a more uniform appearance. Durable and resistant to stains. Ideal for business bags and everyday items.</p>
+                            </div>
+                            <div class="material-card">
+                                <h3>Vegetable-Tanned</h3>
+                                <p>Tanned using natural plant materials. Eco-friendly and develops rich character with age. Perfect for belts and structured goods.</p>
+                            </div>
+                            <div class="material-card">
+                                <h3>Nappa Leather</h3>
+                                <p>Soft, supple, and luxurious. Made from lamb or sheepskin. Excellent for jackets, gloves, and premium accessories.</p>
+                            </div>
+                            <div class="material-card">
+                                <h3>Oil Pull-Up Leather</h3>
+                                <p>Treated with oils and waxes for a distinctive two-tone effect. Scratches self-heal with rubbing. Popular for vintage-style products.</p>
+                            </div>
+                            <div class="material-card">
+                                <h3>Vegan Alternatives</h3>
+                                <p>High-quality synthetic options for brands requiring animal-free products. Durable, easy to clean, and increasingly sustainable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section craft-certifications">
+                    <div class="container">
+                        <div class="cert-grid">
+                            <div class="cert-content">
+                                <span class="section-overline">Certified Excellence</span>
+                                <h2 class="section-title">Our Certifications</h2>
+                                <p>We hold ourselves to the highest international standards for ethical production and environmental responsibility.</p>
+                                <div class="cert-list">
+                                    <div class="cert-item">
+                                        <i class="ph ph-certificate"></i>
+                                        <div>
+                                            <h4>SA8000 Certified</h4>
+                                            <p>Social accountability certification ensuring fair labor practices, safe working conditions, and worker rights.</p>
+                                        </div>
+                                    </div>
+                                    <div class="cert-item">
+                                        <i class="ph ph-leaf"></i>
+                                        <div>
+                                            <h4>LWG Gold Rated</h4>
+                                            <p>Leather Working Group certification for environmental compliance and sustainable leather production.</p>
+                                        </div>
+                                    </div>
+                                    <div class="cert-item">
+                                        <i class="ph ph-recycle"></i>
+                                        <div>
+                                            <h4>REACH Compliant</h4>
+                                            <p>EU regulation compliance ensuring products are free from harmful chemicals and substances.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cert-image">
+                                <img src="images/leather-rolls.jpg" alt="Certified Leather">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cta-section">
+                    <div class="container">
+                        <h2>Experience Our Craftsmanship</h2>
+                        <p>Request samples to see and feel the quality of our work firsthand.</p>
+                        <a href="#/contact" class="btn btn-primary">Request Samples <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </section>
+            `,
+
+            contact: () => `
+                <section class="contact-page">
+                    <div class="container">
+                        <div class="contact-grid">
+                            <div class="contact-info">
+                                <h1>Get in Touch</h1>
+                                <p>Ready to start your private label project? Contact us for a free consultation and quote. We're here to help bring your vision to life.</p>
+
+                                <div class="contact-details">
+                                    <div class="contact-detail">
+                                        <i class="ph ph-map-pin"></i>
+                                        <div>
+                                            <h4>Visit Us</h4>
+                                            <p>Leif Erikssonstraat 1<br>1363 LG Almere<br>Netherlands</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-detail">
+                                        <i class="ph ph-phone"></i>
+                                        <div>
+                                            <h4>Call Us</h4>
+                                            <p>+31 6538 04038</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-detail">
+                                        <i class="ph ph-envelope"></i>
+                                        <div>
+                                            <h4>Email Us</h4>
+                                            <p>info@adnanlederwaren.nl</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-detail">
+                                        <i class="ph ph-clock"></i>
+                                        <div>
+                                            <h4>Business Hours</h4>
+                                            <p>Monday – Friday<br>9:00 – 17:00 CET</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-form">
+                                <h2>Request a Quote</h2>
+                                <form id="quoteForm" onsubmit="handleFormSubmit(event)">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Name <span class="required">*</span></label>
+                                            <input type="text" name="name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Company <span class="required">*</span></label>
+                                            <input type="text" name="company" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Email <span class="required">*</span></label>
+                                            <input type="email" name="email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Phone</label>
+                                            <input type="tel" name="phone">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Product Category</label>
+                                            <select name="category">
+                                                <option value="">Select a category...</option>
+                                                <option value="ladies-bags">Ladies Bags</option>
+                                                <option value="gents-bags">Gents Bags</option>
+                                                <option value="wallets">Wallets</option>
+                                                <option value="belts">Belts</option>
+                                                <option value="jackets">Jackets</option>
+                                                <option value="gloves">Gloves</option>
+                                                <option value="corporate">Corporate Gifts</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Estimated Quantity</label>
+                                            <select name="quantity">
+                                                <option value="">Select quantity...</option>
+                                                <option value="50-100">50 – 100 pieces</option>
+                                                <option value="100-500">100 – 500 pieces</option>
+                                                <option value="500-1000">500 – 1,000 pieces</option>
+                                                <option value="1000+">1,000+ pieces</option>
+                                            </select>
+                                            <p class="form-note">Minimum order: 50 pieces per style</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label>Message / Design Description <span class="required">*</span></label>
+                                        <textarea name="message" required placeholder="Tell us about your project, materials, design requirements..."></textarea>
+                                    </div>
+                                    <div class="form-submit">
+                                        <button type="submit" class="btn btn-primary">
+                                            Send Request <i class="ph ph-paper-plane-tilt"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `,
+
+            notFound: () => `
+                <section class="section" style="text-align: center; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+                    <div>
+                        <h1 style="font-family: var(--font-display); font-size: 4rem; font-style: italic; margin-bottom: 1rem;">404</h1>
+                        <p style="color: var(--gra); margin-bottom: 2rem;">Page not found</p>
+                        <a href="#/" class="btn btn-primary">Back to Home</a>
+                    </div>
+                </section>
+            `
+        };
+
+        // ============================================
+        // HELPER FUNCTIONS
+        // ============================================
+        function renderProductCard(product) {
+            return `
+                <div class="product-card" data-subcategory="${product.subcategory}">
+                    <div class="product-image">[${product.name} — ${product.type}]</div>
+                    <div class="product-info">
+                        <span class="product-tag">${product.subcategory.replace('-', ' ')}</span>
+                        <h3>${product.name}</h3>
+                        <a href="#/contact" class="product-link">Request a Quote <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </div>
+            `;
+        }
+
+        let currentDisplayCount = 12;
+
+        function loadMoreProducts(categoryKey, filter) {
+            const category = CATEGORIES[categoryKey];
+            let products = category.products;
+            if (filter && filter !== 'all') {
+                products = products.filter(p => p.subcategory === filter);
+            }
+
+            currentDisplayCount += 12;
+            const displayProducts = products.slice(0, currentDisplayCount);
+
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = displayProducts.map(product => renderProductCard(product)).join('');
+
+            // Update count
+            document.querySelector('.products-count').textContent =
+                `Showing ${Math.min(currentDisplayCount, products.length)} of ${products.length} products`;
+
+            // Hide load more if no more products
+            if (currentDisplayCount >= products.length) {
+                document.querySelector('.load-more').style.display = 'none';
+            }
+        }
+
+        function filterCategory(categoryKey, filter) {
+            currentDisplayCount = 12;
+            navigateTo(`/products/${categoryKey}${filter !== 'all' ? '?filter=' + filter : ''}`);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you within 24 hours.');
+            e.target.reset();
+        }
+
+        // ============================================
+        // ROUTER
+        // ============================================
+        function navigateTo(path) {
+            window.location.hash = path;
+        }
+
+        function parseRoute() {
+            const hash = window.location.hash.slice(1) || '/';
+            const [path, queryString] = hash.split('?');
+            const params = new URLSearchParams(queryString || '');
+            return { path, params };
+        }
+
+        function router() {
+            const { path, params } = parseRoute();
+            const app = document.getElementById('app');
+            currentDisplayCount = 12;
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+
+            if (path === '/' || path === '') {
+                app.innerHTML = pages.home();
+            } else if (path.startsWith('/products/')) {
+                const categoryKey = path.split('/')[2];
+                const filter = params.get('filter') || 'all';
+                app.innerHTML = pages.category(categoryKey, filter);
+            } else if (path === '/about') {
+                app.innerHTML = pages.about();
+            } else if (path === '/craftsmanship') {
+                app.innerHTML = pages.craftsmanship();
+            } else if (path === '/contact') {
+                app.innerHTML = pages.contact();
+            } else {
+                app.innerHTML = pages.notFound();
+            }
+
+            // Update active nav
+            updateActiveNav(path);
+        }
+
+        function updateActiveNav(path) {
+            document.querySelectorAll('.navbar-nav a').forEach(a => {
+                a.classList.remove('active');
+                const href = a.getAttribute('href');
+                if (href && path.startsWith(href.replace('#', ''))) {
+                    a.classList.add('active');
+                }
+            });
+        }
+
+        // ============================================
+        // EVENT LISTENERS
+        // ============================================
+        window.addEventListener('hashchange', router);
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!window.location.hash) {
+                window.location.hash = '/';
+            }
+            router();
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('navbarToggle').addEventListener('click', () => {
+            document.getElementById('navbarNav').classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.navbar-nav a').forEach(a => {
+            a.addEventListener('click', () => {
+                document.getElementById('navbarNav').classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
