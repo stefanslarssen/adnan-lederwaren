@@ -1,5 +1,6 @@
 services:
-  web:
+  adnan-lederwaren:
+    container_name: adnan-lederwaren
     build: .
     ports:
       - "3003:80"
