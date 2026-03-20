@@ -12,7 +12,7 @@ cd adnan-lederwaren
 # Run with Docker Compose
 docker-compose up
 
-# Open browser at http://localhost:3000
+# Open browser at http://localhost:3003
 ```
 
 ## Alternative: Docker Build
