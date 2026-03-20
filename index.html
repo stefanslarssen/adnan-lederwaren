@@ -1514,6 +1514,111 @@
             margin-right: 0.5rem;
         }
 
+        /* ============================================
+           BLOG PAGE
+        ============================================ */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--off-white);
+            border: 1px solid var(--sand);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .blog-image {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-date {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--skinn);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .blog-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-style: italic;
+            margin: 0.75rem 0;
+        }
+
+        .blog-content p {
+            font-size: 0.9rem;
+            color: var(--gra);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           LEGAL PAGES (Privacy Policy, Terms)
+        ============================================ */
+        .legal-content {
+            background: var(--off-white);
+            padding: 3rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .legal-content h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-style: italic;
+            margin: 2rem 0 1rem;
+            color: var(--mork);
+        }
+
+        .legal-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .legal-content p {
+            color: var(--gra);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .legal-content ul {
+            color: var(--gra);
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .legal-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .legal-content strong {
+            color: var(--mork);
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legal-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .cart-grid {
                 grid-template-columns: 1fr;
@@ -2105,12 +2210,25 @@
                 </div>
 
                 <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/about">About</a></li>
+                        <li><a href="#/products/ladies-bags">Products</a></li>
+                        <li><a href="#/contact">Request a Quote</a></li>
+                        <li><a href="#/login">My Account</a></li>
+                        <li><a href="#/contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
                     <h4>Company</h4>
                     <ul class="footer-links">
                         <li><a href="#/about">About Us</a></li>
                         <li><a href="#/craftsmanship">Craftsmanship</a></li>
-                        <li><a href="#/about">Sustainability</a></li>
-                        <li><a href="#/contact">Contact</a></li>
+                        <li><a href="#/book-appointment">Book Appointment</a></li>
+                        <li><a href="#/blogs">Blogs</a></li>
+                        <li><a href="#/privacy-policy">Privacy Policy</a></li>
                     </ul>
                 </div>
 
@@ -3138,6 +3256,201 @@
                 `;
             },
 
+            blogs: () => `
+                <section class="category-hero">
+                    <div class="container">
+                        <h1>Our Blog</h1>
+                        <p>Insights, trends, and stories from the world of leather craftsmanship</p>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="blog-grid">
+                            <article class="blog-card">
+                                <div class="blog-image" style="background: linear-gradient(135deg, var(--sand), var(--koppar)); height: 200px;"></div>
+                                <div class="blog-content">
+                                    <span class="blog-date">March 15, 2026</span>
+                                    <h3>The Art of Vegetable Tanning</h3>
+                                    <p>Discover the traditional methods behind our premium vegetable-tanned leathers and why this centuries-old technique produces the finest quality hides.</p>
+                                    <a href="#" class="product-link">Read More <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </article>
+                            <article class="blog-card">
+                                <div class="blog-image" style="background: linear-gradient(135deg, var(--skinn), var(--mork)); height: 200px;"></div>
+                                <div class="blog-content">
+                                    <span class="blog-date">March 8, 2026</span>
+                                    <h3>Sustainability in Leather Production</h3>
+                                    <p>How our SA8000 certification and LWG Gold rating ensure ethical and environmentally responsible manufacturing practices.</p>
+                                    <a href="#" class="product-link">Read More <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </article>
+                            <article class="blog-card">
+                                <div class="blog-image" style="background: linear-gradient(135deg, var(--koppar), var(--skinn-dark)); height: 200px;"></div>
+                                <div class="blog-content">
+                                    <span class="blog-date">February 28, 2026</span>
+                                    <h3>Private Label vs. White Label</h3>
+                                    <p>Understanding the differences between private label and white label manufacturing, and which option is right for your brand.</p>
+                                    <a href="#" class="product-link">Read More <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </article>
+                            <article class="blog-card">
+                                <div class="blog-image" style="background: linear-gradient(135deg, var(--mork), var(--gra)); height: 200px;"></div>
+                                <div class="blog-content">
+                                    <span class="blog-date">February 20, 2026</span>
+                                    <h3>Choosing the Right Leather Type</h3>
+                                    <p>A comprehensive guide to full-grain, top-grain, nappa, and vegan leather options for your product line.</p>
+                                    <a href="#" class="product-link">Read More <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            `,
+
+            bookAppointment: () => `
+                <section class="category-hero">
+                    <div class="container">
+                        <h1>Book an Appointment</h1>
+                        <p>Schedule a consultation with our team to discuss your project</p>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container" style="max-width: 700px;">
+                        <div class="contact-form">
+                            <h2>Schedule Your Meeting</h2>
+                            <form onsubmit="handleAppointment(event)">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Full Name <span class="required">*</span></label>
+                                        <input type="text" name="name" required placeholder="John Doe">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company <span class="required">*</span></label>
+                                        <input type="text" name="company" required placeholder="Your Company">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Email <span class="required">*</span></label>
+                                        <input type="email" name="email" required placeholder="your@email.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone</label>
+                                        <input type="tel" name="phone" placeholder="+31 6 1234 5678">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Preferred Date <span class="required">*</span></label>
+                                        <input type="date" name="date" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Preferred Time <span class="required">*</span></label>
+                                        <select name="time" required>
+                                            <option value="">Select time...</option>
+                                            <option value="09:00">09:00</option>
+                                            <option value="10:00">10:00</option>
+                                            <option value="11:00">11:00</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="15:00">15:00</option>
+                                            <option value="16:00">16:00</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Meeting Type</label>
+                                    <select name="type">
+                                        <option value="video">Video Call (Zoom/Teams)</option>
+                                        <option value="phone">Phone Call</option>
+                                        <option value="office">Visit Our Office (Almere, NL)</option>
+                                        <option value="factory">Factory Visit (India)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Meeting Agenda</label>
+                                    <textarea name="agenda" placeholder="What would you like to discuss?"></textarea>
+                                </div>
+                                <div class="form-submit">
+                                    <button type="submit" class="btn btn-primary">
+                                        Book Appointment <i class="ph ph-calendar-check"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            `,
+
+            privacyPolicy: () => `
+                <section class="category-hero">
+                    <div class="container">
+                        <h1>Privacy Policy</h1>
+                        <p>Last updated: March 2026</p>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container" style="max-width: 800px;">
+                        <div class="legal-content">
+                            <h2>1. Introduction</h2>
+                            <p>Adnan Lederwaren ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or engage with our B2B services.</p>
+
+                            <h2>2. Information We Collect</h2>
+                            <p>We may collect the following types of information:</p>
+                            <ul>
+                                <li><strong>Contact Information:</strong> Name, email address, phone number, company name</li>
+                                <li><strong>Business Information:</strong> Company details, VAT numbers, shipping addresses</li>
+                                <li><strong>Order Information:</strong> Product inquiries, quote requests, order history</li>
+                                <li><strong>Technical Data:</strong> IP address, browser type, device information</li>
+                            </ul>
+
+                            <h2>3. How We Use Your Information</h2>
+                            <p>We use your information to:</p>
+                            <ul>
+                                <li>Process and fulfill your orders and quote requests</li>
+                                <li>Communicate with you about products and services</li>
+                                <li>Improve our website and customer experience</li>
+                                <li>Comply with legal obligations</li>
+                            </ul>
+
+                            <h2>4. Data Sharing</h2>
+                            <p>We do not sell your personal data. We may share information with:</p>
+                            <ul>
+                                <li>Shipping and logistics partners to fulfill orders</li>
+                                <li>Payment processors for transaction processing</li>
+                                <li>Legal authorities when required by law</li>
+                            </ul>
+
+                            <h2>5. Data Security</h2>
+                            <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
+
+                            <h2>6. Your Rights</h2>
+                            <p>Under GDPR, you have the right to:</p>
+                            <ul>
+                                <li>Access your personal data</li>
+                                <li>Rectify inaccurate data</li>
+                                <li>Request deletion of your data</li>
+                                <li>Object to processing</li>
+                                <li>Data portability</li>
+                            </ul>
+
+                            <h2>7. Cookies</h2>
+                            <p>Our website uses cookies to enhance your browsing experience. You can control cookie preferences through your browser settings.</p>
+
+                            <h2>8. Contact Us</h2>
+                            <p>For any privacy-related inquiries, please contact us at:</p>
+                            <p>
+                                <strong>Adnan Lederwaren</strong><br>
+                                Leif Erikssonstraat 1<br>
+                                1363 LG Almere, Netherlands<br>
+                                Email: privacy@adnanlederwaren.nl<br>
+                                Phone: +31 6538 04038
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            `,
+
             notFound: () => `
                 <section class="section" style="text-align: center; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
                     <div>
@@ -3325,6 +3638,15 @@
             }
         }
 
+        function handleAppointment(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const date = formData.get('date');
+            const time = formData.get('time');
+            showNotification(`Appointment requested for ${date} at ${time}. We'll confirm shortly!`);
+            e.target.reset();
+        }
+
         // ============================================
         // ROUTER
         // ============================================
@@ -3365,6 +3687,12 @@
                 app.innerHTML = pages.register();
             } else if (path === '/cart') {
                 app.innerHTML = pages.cart();
+            } else if (path === '/blogs') {
+                app.innerHTML = pages.blogs();
+            } else if (path === '/book-appointment') {
+                app.innerHTML = pages.bookAppointment();
+            } else if (path === '/privacy-policy') {
+                app.innerHTML = pages.privacyPolicy();
             } else {
                 app.innerHTML = pages.notFound();
             }
