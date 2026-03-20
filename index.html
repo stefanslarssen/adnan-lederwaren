@@ -3473,19 +3473,47 @@
         // ============================================
         // HELPER FUNCTIONS
         // ============================================
-        function getProductImage(categoryKey) {
-            const images = {
+        function getProductImage(product, categoryKey) {
+            // Try to match product name to actual image file
+            const productImages = {
+                'adam': 'adam.jpg',
+                'agusto': 'agusto.jpg',
+                'aleen': 'aleen.jpg',
+                'aleid': 'aleid.jpg',
+                'alex': 'alex.jpg',
+                'alexandria': 'alexandria.jpg',
+                'anika': 'anika.jpg',
+                'buresta': 'buresta.png',
+                'carlos': 'carlos.jpg',
+                'diederik': 'diederik.jpg',
+                'dirk': 'dirk.jpg',
+                'elmo': 'elmo.jpg',
+                'jackson': 'jackson.jpg',
+                'arlan': 'arlan.jpg',
+                'jackline': 'jackline.webp',
+                'gb072': 'gb072.jpg',
+                'gb074': 'gb074.jpg',
+                'gb081': 'gb081.jpg'
+            };
+
+            const nameLower = product.name.toLowerCase();
+            if (productImages[nameLower]) {
+                return productImages[nameLower];
+            }
+
+            // Fallback per category
+            const categoryFallback = {
                 'ladies-bags': 'ladies-bag.jpg',
                 'gents-bags': 'gents-briefcase.jpg',
                 'wallets': 'wallets-flatlay.jpg',
                 'belts': 'black-belt.jpg',
                 'jackets': 'leather-jacket.jpg'
             };
-            return images[categoryKey] || 'leather-tan-tools.jpg';
+            return categoryFallback[categoryKey] || 'leather-tan-tools.jpg';
         }
 
         function renderProductCard(product, categoryKey) {
-            const imgSrc = getProductImage(categoryKey);
+            const imgSrc = getProductImage(product, categoryKey);
             return `
                 <div class="product-card" data-subcategory="${product.subcategory}">
                     <div class="product-image">
