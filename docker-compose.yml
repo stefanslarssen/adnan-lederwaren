@@ -1,6 +1,9 @@
+name: adnan-lederwaren
+
 services:
-  adnan-lederwaren:
+  web:
     container_name: adnan-lederwaren
+    image: adnan-lederwaren
     build: .
     ports:
       - "3003:80"
