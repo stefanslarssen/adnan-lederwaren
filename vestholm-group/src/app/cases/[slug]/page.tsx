@@ -496,7 +496,7 @@ Virksomheten skalerte uten å legge til flere ansatte.`,
     color: "#1E3A5F",
     date: { en: "March 2026", no: "Mars 2026" },
     readTime: { en: "5 min read", no: "5 min lesetid" },
-    liveDemo: "http://localhost:3001",
+    liveDemo: "http://localhost:4000",
     meta: {
       client: "Vestholm Group",
       industry: { en: "Investment / Finance", no: "Investering / Finans" },
@@ -881,7 +881,7 @@ export default function CaseStudyPage() {
                     {/* iPhone frame */}
                     <div
                       className="relative bg-[#1c1c1e] rounded-[55px] p-[14px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5),0_30px_60px_-30px_rgba(0,0,0,0.6),inset_0_0_0_1px_rgba(255,255,255,0.1)]"
-                      style={{ width: '220px' }}
+                      style={{ width: '320px' }}
                     >
                       {/* Side buttons */}
                       <div className="absolute -left-[3px] top-[90px] w-[3px] h-[22px] bg-[#1c1c1e] rounded-l-sm" />
