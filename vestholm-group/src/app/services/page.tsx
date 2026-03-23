@@ -62,7 +62,7 @@ const servicesData = {
           },
         ],
         cases: [
-          { name: "ESPI", type: "Mobile App · iOS & Android", client: "Boat slip rental app for Espevær with Vipps login/payment and real-time availability.", slug: "espi" },
+          { name: "Amarrra", type: "Mobile App · iOS & Android", client: "Marina booking app for Norway with Vipps login/payment and real-time availability.", slug: "espi" },
           { name: "Nabolagsappen", type: "Mobile App · React Native", client: "Neighborhood community app connecting local residents with location-based features.", slug: "nabolagsappen" },
         ],
         casesTitle: "Apps we have built",
@@ -167,7 +167,7 @@ const servicesData = {
           },
         ],
         cases: [
-          { name: "ESPI", type: "Mobilapp · iOS & Android", client: "Båtplassutleie-app for Espevær med Vipps innlogging/betaling og sanntids tilgjengelighet.", slug: "espi" },
+          { name: "Amarrra", type: "Mobilapp · iOS & Android", client: "Marinabooking-app for Norge med Vipps innlogging/betaling og sanntids tilgjengelighet.", slug: "espi" },
           { name: "Nabolagsappen", type: "Mobilapp · React Native", client: "Nabolagsapp som kobler lokale beboere med stedsbaserte funksjoner.", slug: "nabolagsappen" },
         ],
         casesTitle: "Apper vi har bygget",
