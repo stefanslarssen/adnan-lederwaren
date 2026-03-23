@@ -86,7 +86,6 @@ const servicesData = {
         cases: [
           { name: "Vestholm Dashboard", type: "AI Dashboard", client: "Executive AI dashboard with real-time analytics and intelligent insights for investment portfolio.", slug: "vestholm-dashboard" },
           { name: "REKO Produsent", type: "Dashboard & Mobile App", client: "Order management system for local food producers in Norway's REKO network.", slug: "reko-produsent" },
-          { name: "NFS Workflow System", type: "Business Dashboard", client: "Automated seafood brokerage backend with AI email processing, Telegram bot approvals, and real-time deal tracking.", slug: "nfs-workflow" },
         ],
         casesTitle: "Dashboards we have built",
       },
@@ -191,7 +190,6 @@ const servicesData = {
         cases: [
           { name: "Vestholm Dashboard", type: "AI-Dashboard", client: "Ledelses-AI-dashboard med sanntidsanalyse og intelligente innsikter for investeringsportefølje.", slug: "vestholm-dashboard" },
           { name: "REKO Produsent", type: "Dashboard & Mobilapp", client: "Ordrehåndteringssystem for lokalmatleverandører i REKO-nettverket.", slug: "reko-produsent" },
-          { name: "NFS Workflow System", type: "Forretningsdashboard", client: "Automatisert sjømatmegler-backend med AI-e-postbehandling, Telegram-bot godkjenninger og sanntids avtalesporing.", slug: "nfs-workflow" },
         ],
         casesTitle: "Dashboards vi har bygget",
       },
