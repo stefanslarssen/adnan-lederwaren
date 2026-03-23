@@ -656,7 +656,7 @@ The problems compounded:
 - Manual calculation of what to bring to each pickup point
 - No historical data for planning production
 
-Producers needed a single system that could pull everything together — and it had to work offline, because many Norwegian farms have unreliable internet.`,
+Producers needed a single system that could pull everything together — a dashboard for planning at home and a mobile app for managing orders at pickup events.`,
         no: `REKO-produsenter administrerte virksomhetene sine med en kaotisk blanding av verktøy: Facebook Messenger for bestillinger, regneark for lager, papirlapper for leveringsruter. Hver uke før et REKO-hentearrangement brukte de timer på å manuelt samle bestillinger fra meldingstråder.
 
 Problemene hopet seg opp:
@@ -665,7 +665,7 @@ Problemene hopet seg opp:
 - Manuell beregning av hva som skal bringes til hvert hentested
 - Ingen historiske data for å planlegge produksjon
 
-Produsenter trengte et enkelt system som kunne samle alt — og det måtte fungere offline, fordi mange norske gårder har upålitelig internett.`,
+Produsenter trengte et enkelt system som kunne samle alt — et dashboard for planlegging hjemme og en mobilapp for ordrehåndtering på hentearrangementer.`,
       },
       whatWeImproved: [
         {
@@ -689,19 +689,19 @@ Produsenter trengte et enkelt system som kunne samle alt — og det måtte funge
           },
         },
         {
-          title: { en: "Offline-first with SQLite", no: "Offline-først med SQLite" },
+          title: { en: "Mobile app for pickup events", no: "Mobilapp for hentearrangementer" },
           text: {
-            en: `Built with Tauri and SQLite, the application works entirely offline. Data syncs when connectivity is available, but producers can take orders, update inventory, and plan deliveries even in areas with no cell coverage. The app is fast because everything runs locally.`,
-            no: `Bygget med Tauri og SQLite, fungerer applikasjonen helt offline. Data synkroniseres når tilkobling er tilgjengelig, men produsenter kan ta imot bestillinger, oppdatere lager og planlegge leveranser selv i områder uten mobildekning. Appen er rask fordi alt kjører lokalt.`,
+            en: `The React Native mobile app syncs with the dashboard in real-time via Supabase. At pickup events, producers check off orders as customers arrive, update stock on the fly, and see which orders are still outstanding. Push notifications alert them when new orders come in.`,
+            no: `React Native-mobilappen synkroniseres med dashboardet i sanntid via Supabase. På hentearrangementer krysser produsenter av bestillinger når kunder ankommer, oppdaterer lager på farten, og ser hvilke bestillinger som fortsatt gjenstår. Push-varsler varsler dem når nye bestillinger kommer inn.`,
           },
         },
       ],
       decisions: [
         {
-          title: { en: "Tauri over Electron", no: "Tauri fremfor Electron" },
+          title: { en: "Dashboard + mobile instead of desktop app", no: "Dashboard + mobil i stedet for desktop-app" },
           text: {
-            en: `We chose Tauri instead of Electron for the desktop runtime. The resulting application is under 10MB instead of 150MB+. On older farm laptops, this matters. Startup time is measured in milliseconds, not seconds.`,
-            no: `Vi valgte Tauri fremfor Electron som desktop-runtime. Den resulterende applikasjonen er under 10MB i stedet for 150MB+. På eldre gårdslaptoper betyr dette noe. Oppstartstid måles i millisekunder, ikke sekunder.`,
+            en: `We chose a web dashboard with companion mobile app over a traditional desktop application. Producers plan orders on the dashboard at home, then use the mobile app at pickup events. No installation required for the dashboard — just open a browser.`,
+            no: `Vi valgte et web-dashboard med tilhørende mobilapp fremfor en tradisjonell desktop-applikasjon. Produsenter planlegger bestillinger på dashboardet hjemme, og bruker så mobilappen på hentearrangementer. Ingen installasjon kreves for dashboardet — bare åpne en nettleser.`,
           },
         },
         {
@@ -715,17 +715,17 @@ Produsenter trengte et enkelt system som kunne samle alt — og det måtte funge
       theResult: {
         en: `REKO producers now have a professional tool built specifically for their workflow. Order management that took hours happens in minutes. Inventory tracking is automatic. Delivery planning is visual and clear.
 
-The offline-first architecture means the app works at the farm, at the market, and everywhere in between. No more lost orders in Facebook message threads. No more manual spreadsheet calculations.
+The dashboard handles planning at home, while the mobile app keeps producers in control at pickup events. Real-time sync means nothing falls through the cracks. No more lost orders in Facebook message threads. No more manual spreadsheet calculations.
 
 Local food, local software — designed for how Norwegian producers actually work.`,
         no: `REKO-produsenter har nå et profesjonelt verktøy bygget spesielt for arbeidsflyten deres. Ordrebehandling som tok timer skjer på minutter. Lagersporing er automatisk. Leveranseplanlegging er visuell og tydelig.
 
-Offline-først-arkitekturen betyr at appen fungerer på gården, på markedet og overalt imellom. Ingen flere tapte bestillinger i Facebook-meldingstråder. Ingen flere manuelle regnearksberegninger.
+Dashboardet håndterer planlegging hjemme, mens mobilappen holder produsenter i kontroll på hentearrangementer. Sanntidssynkronisering betyr at ingenting faller mellom sprekkene. Ingen flere tapte bestillinger i Facebook-meldingstråder. Ingen flere manuelle regnearksberegninger.
 
 Lokal mat, lokal programvare — designet for hvordan norske produsenter faktisk jobber.`,
       },
     },
-    tags: ["Desktop Software", "Tauri", "React", "SQLite", "Agriculture", "Norway"],
+    tags: ["Dashboard", "Mobile App", "Next.js", "React Native", "Supabase", "Agriculture", "Norway"],
   },
 };
 
