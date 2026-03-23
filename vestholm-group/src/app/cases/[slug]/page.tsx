@@ -16,6 +16,7 @@ interface CaseStudy {
   readTime: { en: string; no: string };
   screenshot?: string;
   video?: string;
+  mobileVideo?: string;
   videoType?: "mobile" | "desktop";
   liveDemo?: string;
   meta: {
@@ -633,6 +634,8 @@ Beskytter Norges kyst — med en visuell identitet som matcher oppdraget.`,
     date: { en: "March 2026", no: "Mars 2026" },
     readTime: { en: "5 min read", no: "5 min lesetid" },
     video: "/videos/reko-produsent-demo.gif",
+    mobileVideo: "/videos/reko-produsent-mobile.gif",
+    videoType: "desktop",
     meta: {
       client: "REKO Producers",
       industry: { en: "Agriculture / Local Food", no: "Landbruk / Lokalmat" },
@@ -832,12 +835,12 @@ export default function CaseStudyPage() {
       {/* Screenshot or Video */}
       {(caseStudy.screenshot || caseStudy.video) && (
         <section className="px-6 mb-16">
-          <div className={caseStudy.videoType === "desktop" ? "max-w-5xl mx-auto" : "max-w-3xl mx-auto"}>
+          <div className={caseStudy.mobileVideo || caseStudy.videoType === "desktop" ? "max-w-6xl mx-auto" : "max-w-3xl mx-auto"}>
             <FadeInSection>
-              <div className="flex justify-center">
-                {caseStudy.video && caseStudy.videoType === "desktop" ? (
-                  /* MacBook-style mockup with video */
-                  <div className="relative w-full max-w-4xl">
+              <div className={caseStudy.mobileVideo ? "flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12" : "flex justify-center"}>
+                {/* Desktop video (MacBook mockup) */}
+                {caseStudy.video && caseStudy.videoType === "desktop" && (
+                  <div className="relative w-full max-w-3xl">
                     {/* Laptop screen */}
                     <div className="relative bg-[#1c1c1e] rounded-t-xl p-2 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
                       {/* Camera notch */}
@@ -849,7 +852,7 @@ export default function CaseStudyPage() {
                         {caseStudy.video.endsWith('.gif') ? (
                           <img
                             src={caseStudy.video}
-                            alt={`${caseStudy.title} demo`}
+                            alt={`${caseStudy.title} desktop demo`}
                             className="w-full h-full object-cover"
                           />
                         ) : (
@@ -870,37 +873,39 @@ export default function CaseStudyPage() {
                       <div className="h-1 bg-[#1c1c1e] mx-auto w-1/4 rounded-b-lg" />
                     </div>
                   </div>
-                ) : caseStudy.video ? (
-                  /* iPhone-style mockup with video */
-                  <div className="relative">
+                )}
+
+                {/* Mobile video (iPhone mockup) - shown alongside desktop or standalone */}
+                {(caseStudy.mobileVideo || (caseStudy.video && caseStudy.videoType !== "desktop")) && (
+                  <div className="relative flex-shrink-0">
                     {/* iPhone frame */}
                     <div
                       className="relative bg-[#1c1c1e] rounded-[55px] p-[14px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5),0_30px_60px_-30px_rgba(0,0,0,0.6),inset_0_0_0_1px_rgba(255,255,255,0.1)]"
-                      style={{ width: '300px' }}
+                      style={{ width: '220px' }}
                     >
                       {/* Side buttons */}
-                      <div className="absolute -left-[3px] top-[120px] w-[3px] h-[30px] bg-[#1c1c1e] rounded-l-sm" />
-                      <div className="absolute -left-[3px] top-[170px] w-[3px] h-[60px] bg-[#1c1c1e] rounded-l-sm" />
-                      <div className="absolute -left-[3px] top-[240px] w-[3px] h-[60px] bg-[#1c1c1e] rounded-l-sm" />
-                      <div className="absolute -right-[3px] top-[180px] w-[3px] h-[80px] bg-[#1c1c1e] rounded-r-sm" />
+                      <div className="absolute -left-[3px] top-[90px] w-[3px] h-[22px] bg-[#1c1c1e] rounded-l-sm" />
+                      <div className="absolute -left-[3px] top-[125px] w-[3px] h-[44px] bg-[#1c1c1e] rounded-l-sm" />
+                      <div className="absolute -left-[3px] top-[176px] w-[3px] h-[44px] bg-[#1c1c1e] rounded-l-sm" />
+                      <div className="absolute -right-[3px] top-[132px] w-[3px] h-[58px] bg-[#1c1c1e] rounded-r-sm" />
 
                       {/* Screen container */}
                       <div className="relative bg-black rounded-[41px] overflow-hidden" style={{ aspectRatio: '9/19.5' }}>
                         {/* Dynamic Island */}
-                        <div className="absolute top-[12px] left-1/2 -translate-x-1/2 w-[126px] h-[37px] bg-black rounded-full z-10 flex items-center justify-center">
-                          <div className="w-[10px] h-[10px] bg-[#1c1c1e] rounded-full mr-[50px]" />
+                        <div className="absolute top-[9px] left-1/2 -translate-x-1/2 w-[92px] h-[27px] bg-black rounded-full z-10 flex items-center justify-center">
+                          <div className="w-[7px] h-[7px] bg-[#1c1c1e] rounded-full mr-[36px]" />
                         </div>
 
                         {/* Video or GIF */}
-                        {caseStudy.video.endsWith('.gif') ? (
+                        {(caseStudy.mobileVideo || caseStudy.video)?.endsWith('.gif') ? (
                           <img
-                            src={caseStudy.video}
-                            alt={`${caseStudy.title} demo`}
+                            src={caseStudy.mobileVideo || caseStudy.video}
+                            alt={`${caseStudy.title} mobile demo`}
                             className="w-full h-full object-cover"
                           />
                         ) : (
                           <video
-                            src={caseStudy.video}
+                            src={caseStudy.mobileVideo || caseStudy.video}
                             autoPlay
                             loop
                             muted
@@ -910,12 +915,14 @@ export default function CaseStudyPage() {
                         )}
 
                         {/* Home indicator */}
-                        <div className="absolute bottom-[8px] left-1/2 -translate-x-1/2 w-[134px] h-[5px] bg-white/30 rounded-full" />
+                        <div className="absolute bottom-[6px] left-1/2 -translate-x-1/2 w-[98px] h-[4px] bg-white/30 rounded-full" />
                       </div>
                     </div>
                   </div>
-                ) : caseStudy.screenshot ? (
-                  /* Static image - full width */
+                )}
+
+                {/* Screenshot only (no video) */}
+                {caseStudy.screenshot && !caseStudy.video && !caseStudy.mobileVideo && (
                   <div className="w-full">
                     <Image
                       src={caseStudy.screenshot}
@@ -925,7 +932,7 @@ export default function CaseStudyPage() {
                       className="w-full h-auto rounded-lg border border-gold/20"
                     />
                   </div>
-                ) : null}
+                )}
               </div>
             </FadeInSection>
           </div>
